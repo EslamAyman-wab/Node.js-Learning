@@ -8,12 +8,12 @@ Use this checklist to track the topics covered by your course. Check a box only 
 
 ## Chapter 1 — Development Environment and Project Setup
 
-- [ ] Install Node.js and verify the installation with `node -v` and `npm -v`.
-- [ ] Run a JavaScript file with `node filename.js`.
-- [ ] Initialize a project with `npm init` and understand the purpose of `package.json`.
-- [ ] Install and uninstall packages; understand the difference between `dependencies` and `devDependencies`.
-- [ ] Add run commands to `scripts` and execute them with `npm run`.
-- [ ] Understand Node.js module systems: CommonJS (`require` / `module.exports`) and ES Modules (`import` / `export`), and know which one your project uses.
+- [x] Install Node.js and verify the installation with `node -v` and `npm -v`.
+- [x] Run a JavaScript file with `node filename.js`.
+- [x] Initialize a project with `npm init` and understand the purpose of `package.json`.
+- [x] Install and uninstall packages; understand the difference between `dependencies` and `devDependencies`.
+- [x] Add run commands to `scripts` and execute them with `npm run`.
+- [x] Understand Node.js module systems: CommonJS (`require` / `module.exports`) and ES Modules (`import` / `export`), and know which one your project uses.
 
 **Completion criteria:** I can create a new Node.js project, split code into multiple files, import and export functions, and run the project using an npm script.
 
