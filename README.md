@@ -1,72 +1,109 @@
-# Node.js Learning Roadmap
+# Node.js + Express Learning Roadmap
 
-This repository is my step-by-step path to learning Node.js from scratch and becoming a junior backend developer. I will start with the JavaScript and command-line basics I need, then learn how Node.js works, build HTTP servers and REST APIs, connect an application to a database, and finish by testing and deploying a complete backend. I will write and run code for every topic, keep my examples in this repository, and move on when I can explain the idea and build a small example without copying a tutorial.
+Use this checklist to track the topics covered by your course. Check a box only after you have practiced the topic yourself and can explain it in your own words—not just after watching a video.
 
-## Study checklist
+**Checklist status**
+- [ ] Not completed yet
+- [x] Understood and practiced independently
 
-### 1. Prepare the foundations
+## Chapter 1 — Development Environment and Project Setup
 
-- [ ] Install Node.js LTS and npm; learn to check versions with `node --version` and `npm --version`.
-- [ ] Learn basic terminal commands, paths, files, and folders.
-- [ ] Review JavaScript variables, types, operators, conditionals, loops, functions, arrays, and objects.
-- [ ] Learn scope, closures, destructuring, template strings, spread/rest, and array methods such as `map`, `filter`, and `find`.
-- [ ] Learn JavaScript modules: `import`/`export` and CommonJS `require`/`module.exports`.
-- [ ] Practise using Git: status, add, commit, branches, and reading a diff.
+- [ ] Install Node.js and verify the installation with `node -v` and `npm -v`.
+- [ ] Run a JavaScript file with `node filename.js`.
+- [ ] Initialize a project with `npm init` and understand the purpose of `package.json`.
+- [ ] Install and uninstall packages; understand the difference between `dependencies` and `devDependencies`.
+- [ ] Add run commands to `scripts` and execute them with `npm run`.
+- [ ] Understand Node.js module systems: CommonJS (`require` / `module.exports`) and ES Modules (`import` / `export`), and know which one your project uses.
 
-### 2. Learn Node.js
+**Completion criteria:** I can create a new Node.js project, split code into multiple files, import and export functions, and run the project using an npm script.
 
-- [ ] Understand what Node.js is, what it is used for, and how it differs from JavaScript in a browser.
-- [ ] Learn the event loop and non-blocking I/O at a beginner level.
-- [ ] Use core modules such as `fs`, `path`, and `events`.
-- [ ] Read and write files, and understand when to use synchronous versus asynchronous methods.
-- [ ] Learn callbacks, Promises, `async`/`await`, and how to handle rejected Promises.
-- [ ] Use npm to initialize a project, install and remove packages, and understand `package.json` and `package-lock.json`.
-- [ ] Learn environment variables and configuration; do not commit secrets.
+## Chapter 2 — Node.js Fundamentals
 
-### 3. Build web servers and APIs
+- [ ] Explain the difference between JavaScript in a browser and JavaScript running in Node.js.
+- [ ] Recognize built-in modules such as `node:path`, `node:fs`, and `node:http` and know what they are used for.
+- [ ] Read and write files using the asynchronous APIs provided by `node:fs`.
+- [ ] Use `path.join()` and other `node:path` methods to work with file paths safely.
+- [ ] Understand `process` and use `process.argv` and `process.env` when appropriate.
+- [ ] Understand environment variables and configuration files; avoid hardcoding secrets in source code.
+- [ ] Understand the basic purpose of `EventEmitter` and events in Node.js.
+- [ ] Understand the basic purpose of Buffers and Streams and recognize when they may be useful.
+- [ ] Understand the program lifecycle, read stack traces, and identify common runtime errors.
+- [ ] Handle errors from asynchronous operations appropriately; do not silently ignore errors or leave Promise rejections unhandled.
+- [ ] Explain the basic idea of the Event Loop and why CPU-heavy synchronous work can block a server.
 
-- [ ] Learn HTTP basics: requests, responses, methods, status codes, headers, and JSON.
-- [ ] Build a small server with Node.js's built-in `http` module.
-- [ ] Learn Express: routes, middleware, route parameters, query strings, and request bodies.
-- [ ] Design REST APIs using appropriate methods and status codes.
-- [ ] Add input validation, consistent error handling, and useful logging.
-- [ ] Use Postman, Insomnia, or `curl` to send requests and inspect responses.
-- [ ] Learn CORS and basic browser-to-API communication.
+**Completion criteria:** I can write a Node.js program that reads a file, processes its contents, and writes the result to another file while handling paths and errors without copying the lesson's solution.
 
-### 4. Work with data
+## Chapter 3 — HTTP with Node.js Before Express
 
-- [ ] Learn database fundamentals: tables or collections, records, relationships, and indexes.
-- [ ] Choose one database to start with (for example, PostgreSQL or MongoDB) and learn its basic queries.
-- [ ] Connect a Node.js application to the database using a suitable driver or ORM.
-- [ ] Create, read, update, and delete records (CRUD).
-- [ ] Learn schema design, migrations, and safe handling of database errors.
-- [ ] Practise pagination, filtering, and sorting in API endpoints.
+- [ ] Create an HTTP server using `node:http` and `createServer()`.
+- [ ] Explain the roles of `req` and `res` and how an HTTP request reaches the server.
+- [ ] Read the request URL and HTTP methods such as `GET` and `POST`.
+- [ ] Return an appropriate status code, headers, and response body.
+- [ ] Understand JSON and how request and response data are exchanged.
+- [ ] Create multiple simple routes manually and explain why route handling becomes harder to maintain as an application grows.
 
-### 5. Add essential backend skills
+**Completion criteria:** I can build a small HTTP server from scratch, receive a request, return the correct response, and explain what happens from request arrival to response completion.
 
-- [ ] Learn authentication versus authorization, then implement a basic sign-up and sign-in flow.
-- [ ] Store passwords safely with a password-hashing library; never store plain-text passwords.
-- [ ] Learn sessions or token-based authentication and protect private routes.
-- [ ] Validate and sanitize incoming data; use parameterized queries to reduce injection risk.
-- [ ] Learn about HTTPS, secrets, least privilege, and common web risks such as broken access control.
-- [ ] Understand Node.js error types and avoid exposing stack traces or secrets in API responses.
+## Chapter 4 — Express Fundamentals
 
-### 6. Test, maintain, and deploy
+- [ ] Install `express`, create an application, and listen on a specified port.
+- [ ] Create routes using `app.get()`, `app.post()`, `app.patch()` or `app.put()`, and `app.delete()`.
+- [ ] Explain the difference between an HTTP method and a route path.
+- [ ] Read `req.params`, `req.query`, and `req.body`, and explain when each is used.
+- [ ] Use `express.json()` before routes that need to read JSON request bodies.
+- [ ] Send responses with `res.status()`, `res.json()`, and `res.send()`.
+- [ ] Understand middleware, its execution order, the role of `next()`, and when a response should be completed.
+- [ ] Use `express.Router()` to split routes into separate files instead of placing everything in one file.
+- [ ] Recognize built-in middleware and understand when third-party middleware may be useful.
+- [ ] Test requests and responses with Postman or a similar API client, including HTTP status codes.
 
-- [ ] Write unit tests for individual functions and integration tests for API routes.
-- [ ] Learn how to use a debugger and read stack traces.
-- [ ] Use a formatter and linter, and keep code organized into routes, controllers, services, and data-access modules as the project grows.
-- [ ] Add a README to each project explaining setup, configuration, and how to run tests.
-- [ ] Deploy a small API to a hosting platform and connect it to a hosted database.
-- [ ] Learn basic production practices: configuration, logs, health checks, and graceful shutdown.
+**Completion criteria:** I can build an Express application with several routes, accept JSON input, return appropriate responses and status codes, and explain the middleware execution order.
 
-### 7. Put it together
+## Chapter 5 — API Design and Data Handling
 
-- [ ] Build a task-management REST API with CRUD endpoints and a database.
-- [ ] Add validation, consistent errors, tests, and API documentation.
-- [ ] Add user accounts and ensure users can only access their own tasks.
-- [ ] Deploy the project, document its live URL and setup instructions, and review what I would improve next.
+- [ ] Understand the basics of REST and choose appropriate routes and HTTP methods for resources.
+- [ ] Separate routes from controllers and organize the project files clearly.
+- [ ] Keep request-handling code separate from application logic when it improves clarity and maintainability.
+- [ ] Implement CRUD operations using an in-memory array; do not add a database at this stage.
+- [ ] Validate user input before using it and reject invalid data with a clear response.
+- [ ] Handle common cases such as a missing resource, invalid input, and an unsupported route.
+- [ ] Create centralized error-handling middleware and understand where it belongs in the middleware order.
+- [ ] Understand how asynchronous errors are handled in the version of Express used by the course.
+- [ ] Use environment variables for application settings and never commit secret values to Git.
+- [ ] Add basic request and error logging; understand the basics of CORS and avoid exposing internal error details to clients.
 
-## Learning habit
+**Completion criteria:** I can create, read, update, and delete resources through an API, validate inputs, and handle errors without duplicating the same error-handling logic in every route.
 
-For each checkbox, first study the idea, then write a small example, change it to see what happens, and explain it in my own words. Keep notes and commit working milestones to Git. If I get stuck, reduce the problem to a smaller example, read the error message, and consult the official Node.js or library documentation.
+## Chapter 6 — Testing and Final Project
+
+- [ ] Test successful requests and error cases with Postman or a similar tool.
+- [ ] Write basic automated tests for application logic or API routes using the testing tools covered by the course.
+- [ ] Ensure every expected request path returns an appropriate response instead of remaining pending indefinitely.
+- [ ] Build a small final project: a **Tasks API** for managing tasks, using Express and temporary in-memory storage.
+- [ ] Implement endpoints to list tasks, create a task, update a task, and delete a task.
+- [ ] Validate incoming data and return appropriate responses for invalid input.
+- [ ] Return a `404` response for unknown routes or resources that do not exist.
+- [ ] Implement centralized error handling.
+- [ ] Organize the project into clear files and document how to install and run it in the README.
+
+**Important:** In-memory data is lost when the server restarts. This is intentional for this stage; database integration comes later.
+
+## Chapter 7 — Readiness Check
+
+- [ ] I can build the Tasks API from scratch without following a video step by step.
+- [ ] I can explain the request lifecycle: **Request → Middleware → Route/Controller → Application Logic → Response**.
+- [ ] I can explain `req.params`, `req.query`, and `req.body` and choose appropriate HTTP status codes.
+- [ ] I can trace errors and return appropriate responses instead of hiding or ignoring errors.
+- [ ] I can test the main endpoints and important error cases independently.
+- [ ] I can explain which features are still missing because the project does not use a database.
+
+If I cannot meet one of these criteria, I should revisit that topic and practice it before moving on. After completing this roadmap, the next learning stage is **SQL and NoSQL databases**.
+
+## Official References
+
+- [Node.js — Introduction](https://nodejs.org/learn/getting-started/introduction-to-nodejs)
+- [Node.js — API Documentation](https://nodejs.org/api/)
+- [Express — Guide](https://expressjs.com/en/guide/)
+- [Express — Routing](https://expressjs.com/en/5x/guide/routing.html)
+- [Express — Using Middleware](https://expressjs.com/en/guide/using-middleware.html)
+- [Express — Error Handling](https://expressjs.com/en/guide/error-handling.html)
