@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+    <title>Shop</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <head>
-        <nav>
+    <header class="site-header">
+        <nav class="navigation">
+            <a class="brand" href="/">My Shop</a>
             <ul>
-                <li><a href="/">Shop</a></li>
-                <li><a href="/add-product">Add Product</a></li>
+                <li><a class="active" href="/">Shop</a></li>
+                <li><a href="/admin/add-product">Add Product</a></li>
             </ul>
         </nav>
-    </head>
+    </header>
     <main>
-      <h1>My Products </h1>
-      <p>List of all the products .....</p>
+        <section class="card">
+            <h1>My Products</h1>
+            <p>Your products will appear here.</p>
+        </section>
     </main>
-    
 </body>
 </html>
